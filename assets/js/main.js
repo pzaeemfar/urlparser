@@ -41,6 +41,7 @@ urlField.addEventListener("change", () => {
       }
     }
   } catch {
+    outputTable.replaceChildren();
     errorMessage.textContent = "Invalid URL";
     errorMessage.hidden = false;
   }
