@@ -26,7 +26,19 @@ urlField.addEventListener("change", function () {
       const row = document.createElement("tr");
 
       const heading = document.createElement("th");
-      heading.textContent = key;
+      switch (key) {
+        case "pathname":
+          heading.textContent = "path";
+          break;
+        case "search":
+          heading.textContent = "QS (Query String)";
+          break;
+        case "hash":
+          heading.textContent = "Fragment";
+          break;
+        default:
+          heading.textContent = key;
+      }
 
       const data = document.createElement("td");
       data.textContent = decodeURIComponent(parsedUrl[key]);
