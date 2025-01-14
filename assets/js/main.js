@@ -10,8 +10,16 @@ urlField.addEventListener("change", function () {
     outputTable.replaceChildren();
 
     const nativeKeys = ["toString", "toJSON"];
+    const blockedKeys = [
+      ...nativeKeys,
+      "origin",
+      "hostname",
+      "searchParams",
+      "href",
+    ];
+
     for (const key in parsedUrl) {
-      if (nativeKeys.includes(key)) {
+      if (blockedKeys.includes(key)) {
         continue;
       }
 
