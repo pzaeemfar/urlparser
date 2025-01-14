@@ -2,6 +2,10 @@ const urlField = document.querySelector("#urlField");
 const errorMessage = document.querySelector("#errorMessage");
 const outputTable = document.querySelector("#outputTable");
 
+window.onload = function () {
+  urlField.focus();
+};
+
 const nativeKeys = ["toString", "toJSON"];
 const blockedKeys = [
   ...nativeKeys,
